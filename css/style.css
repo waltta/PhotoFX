@@ -1,0 +1,33 @@
+/* css/style.css */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background:#f8f9fa;
+}
+
+header h1{
+  text-align:center;
+  margin-bottom:1rem;
+}
+
+/* Canvas */
+#previewCanvas{
+  border:1px solid #ccc;
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:0 auto 20px;
+}
+
+/* Sliders */
+.slider-wrapper{
+  margin-top:.75rem;
+}
+
+.noUi-target{
+  height:15px;
+  background:#ddd;
+  border-radius:6px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>PhotoFX – Effets photo &amp; VHS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- noUiSlider (pour les sliders) -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css">
+<script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:20px;background:#fafafa;}
+  h1{margin-top:0;text-align:center;}
+  #app{max-width:800px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+  canvas{border:1px solid #ccc;width:100%;height:auto;}
+  .controls-group{background:#fff;padding:10px;border-radius:5px;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+  .slider-label{margin-bottom:5px;font-weight:bold;}
+  .checkboxes{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .checkboxes label{display:inline-flex;align-items:center;cursor:pointer;}
+  button#downloadBtn{padding:.6em 1.2em;background:#007bff;color:#fff;border:none;border-radius:4px;font-size:1rem;cursor:pointer;}
+  button#downloadBtn[disabled]{background:#999;cursor:not-allowed;}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <h1>PhotoFX – Effets photo &amp; VHS</h1>
+
+  <!-- ① Choix du fichier -->
+  <input type="file" id="fileInput" accept="image/*">
+
+  <!-- ② Canvas d’aperçu -->
+  <canvas id="previewCanvas"></canvas>
+
+  <!-- ③ Section des contrôles (masquée tant qu’aucune image n’est chargée) -->
+  <section id="controls-section" class="controls-group" style="display:none;">
+    <!-- Sliders -->
+    <div>
+      <div class="slider-label">Blur</div>
+      <div id="blurSlider"></div>
+    </div>
+
+    <div>
+      <div class="slider-label">Brightness</div>
+      <div id="brightnessSlider"></div>
+    </div>
+
+    <div>
+      <div class="slider-label">Qualité JPEG</div>
+      <div id="qualitySlider"></div>
+    </div>
+
+    <!-- Effets supplémentaires -->
+    <div class="checkboxes">
+      <label><input type="checkbox" id="vhsEffect"          class="effect-checkbox"> VHS effect</label>
+<input type="checkbox" id="lowLightEffect"> Low‑light grain<br>
+<input type="checkbox" id="vintageFilmEffect"> Vintage Film<br>
+<input type="checkbox" id="glitchVHS"> Glitch / VHS<br>
+      <label><input type="checkbox" id="noiseEffect"        class="effect-checkbox"> Noise / grain</label>
+      <label><input type="checkbox" id="oldFilmEffect"      class="effect-checkbox"> Old‑film (VHS+grain)</label>
+      <label><input type="checkbox" id="vhsVideoEffect"     class="effect-checkbox"> VHS video mode</label>
+    </div>
+
+    <!-- Bouton de téléchargement -->
+    <button id="downloadBtn" disabled>Download image</button>
+  </section>
+</div>
+
+<!-- Script principal (après les dépendances) -->
+<script src="js/main.js"></script>
+</body>
+</html>
